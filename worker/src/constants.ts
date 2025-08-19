@@ -1,5 +1,5 @@
 export const CONSTANTS = {
-    VERSION: 'v' + '0.10.0',
+    VERSION: 'v' + '1.0.3',
 
     // DB Version
     DB_VERSION_KEY: 'db_version',
