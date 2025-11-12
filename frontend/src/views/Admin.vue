@@ -14,6 +14,7 @@ import AccountSettings from './admin/AccountSettings.vue';
 import UserManagement from './admin/UserManagement.vue';
 import UserSettings from './admin/UserSettings.vue';
 import UserOauth2Settings from './admin/UserOauth2Settings.vue';
+import RoleAddressConfig from './admin/RoleAddressConfig.vue';
 import Mails from './admin/Mails.vue';
 import MailsUnknow from './admin/MailsUnknow.vue';
 import About from './common/About.vue';
@@ -24,6 +25,7 @@ import Telegram from './admin/Telegram.vue';
 import Webhook from './admin/Webhook.vue';
 import MailWebhook from './admin/MailWebhook.vue';
 import WorkerConfig from './admin/WorkerConfig.vue';
+import IpBlacklistSettings from './admin/IpBlacklistSettings.vue';
 
 const {
   adminAuth, showAdminAuth, adminTab, loading,
@@ -61,6 +63,7 @@ const { t } = useI18n({
       user_management: 'User Management',
       user_settings: 'User Settings',
       userOauth2Settings: 'Oauth2 Settings',
+      roleAddressConfig: 'Role Address Config',
       unknow: 'Mails with unknow receiver',
       senderAccess: 'Sender Access Control',
       sendBox: 'Send Box',
@@ -70,6 +73,7 @@ const { t } = useI18n({
       maintenance: 'Maintenance',
       database: 'Database',
       workerconfig: 'Worker Config',
+      ipBlacklistSettings: 'IP Blacklist',
       appearance: 'Appearance',
       about: 'About',
       ok: 'OK',
@@ -88,6 +92,7 @@ const { t } = useI18n({
       user_management: '用户管理',
       user_settings: '用户设置',
       userOauth2Settings: 'Oauth2 设置',
+      roleAddressConfig: '角色地址配置',
       unknow: '无收件人邮件',
       senderAccess: '发件权限控制',
       sendBox: '发件箱',
@@ -97,6 +102,7 @@ const { t } = useI18n({
       maintenance: '维护',
       database: '数据库',
       workerconfig: 'Worker 配置',
+      ipBlacklistSettings: 'IP 黑名单',
       appearance: '外观',
       about: '关于',
       ok: '确定',
@@ -157,6 +163,9 @@ onMounted(async () => {
           <n-tab-pane name="senderAccess" :tab="t('senderAccess')">
             <SenderAccess />
           </n-tab-pane>
+          <n-tab-pane name="ipBlacklistSettings" :tab="t('ipBlacklistSettings')">
+            <IpBlacklistSettings />
+          </n-tab-pane>
           <n-tab-pane name="webhook" :tab="t('webhookSettings')">
             <Webhook />
           </n-tab-pane>
@@ -172,6 +181,9 @@ onMounted(async () => {
           </n-tab-pane>
           <n-tab-pane name="userOauth2Settings" :tab="t('userOauth2Settings')">
             <UserOauth2Settings />
+          </n-tab-pane>
+          <n-tab-pane name="roleAddressConfig" :tab="t('roleAddressConfig')">
+            <RoleAddressConfig />
           </n-tab-pane>
         </n-tabs>
       </n-tab-pane>
